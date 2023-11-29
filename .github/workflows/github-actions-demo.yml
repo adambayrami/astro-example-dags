@@ -15,7 +15,11 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Workspace List
+      - name: Install Astro
+        run: |
+          curl -sSL https://install.astronomer.io | sudo bash -s
+        shell: bash
+      - name: Astro Versionn
         run: | 
-          astro workspace list
+          astro version
         shell: bash
